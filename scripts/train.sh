@@ -16,12 +16,54 @@ SECONDS=0
 
 echo "Starting:"
 
+echo "Model 1:"
+
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
         --epochs 40 \
         --log-interval 100 \
-        --emsize 200 --nhid 200 --dropout 0.5 --tied \
-        --save $models/model.pt
+        --emsize 250 --nhid 250 --dropout 0.1 --tied \
+        --save $models/model1.pt
+)
+
+echo "Model 2:"
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
+        --epochs 40 \
+        --log-interval 100 \
+        --emsize 250 --nhid 250 --dropout 0.3 --tied \
+        --save $models/model2.pt
+)
+
+echo "Model 3:"
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
+        --epochs 40 \
+        --log-interval 100 \
+        --emsize 250 --nhid 250 --dropout 0.5 --tied \
+        --save $models/model3.pt
+)
+
+echo "Model 4:"
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
+        --epochs 40 \
+        --log-interval 100 \
+        --emsize 250 --nhid 250 --dropout 0.7 --tied \
+        --save $models/model4.pt
+)
+
+echo "Model 5:"
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
+        --epochs 40 \
+        --log-interval 100 \
+        --emsize 250 --nhid 250 --dropout 0.9 --tied \
+        --save $models/model5.pt
 )
 
 echo "time taken:"

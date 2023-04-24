@@ -41,3 +41,5 @@ cat $data/grimm/raw/tales.cleaned.txt | python $base/scripts/preprocess.py --voc
 head -n 440 $data/grimm/raw/tales.preprocessed.txt | tail -n 400 > $data/grimm/valid.txt
 head -n 840 $data/grimm/raw/tales.preprocessed.txt | tail -n 400 > $data/grimm/test.txt
 tail -n 3075 $data/grimm/raw/tales.preprocessed.txt | head -n 2955 > $data/grimm/train.txt
+
+read -p "Press any key..."

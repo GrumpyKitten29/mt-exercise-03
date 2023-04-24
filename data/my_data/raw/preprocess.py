@@ -17,11 +17,11 @@ nltk.download('punkt')
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--vocab-size", type=int, help="Size of vocabulary", required=True)
-    parser.add_argument("--tokenize", action="store_true", help="Assume input strings are not tokenized yet.", required=False)
+    parser.add_argument("--vocab-size", type=int, help="Size of vocabulary", default=5000, required=False)
+    parser.add_argument("--tokenize", action="store_true", help="Assume input strings are not tokenized yet.", default=True, required=False)
     parser.add_argument("--unk-string", type=str, help="String to use for out-of-vocabulary tokens.", default="<unk>", required=False)
     parser.add_argument("--lang", type=str, help="Language code (important for --tokenize)", default="en", required=False)
-    parser.add_argument("--sent-tokenize", action="store_true", help="Assume sentences span several lines.", required=False)
+    parser.add_argument("--sent-tokenize", action="store_true", help="Assume sentences span several lines.", default=True, required=False)
     parser.add_argument("--language", type=str, help="Language full name (important for --sent-tokenize)", default="english")
 
     args = parser.parse_args()
@@ -29,6 +29,9 @@ def parse_args():
     return args
 
 def main():
+
+    infile = open('tales_cleaned.txt', 'r')
+    outfile = open('tales_preprocessed.txt', 'w')
 
     tic = time.time()
 
@@ -41,10 +44,10 @@ def main():
         tokenizer = MosesTokenizer(lang=args.lang)
 
     if args.sent_tokenize:
-        text = sys.stdin.read()
+        text = infile.read()
         lines = sent_tokenize(text, language=args.language)
     else:
-        lines = sys.stdin.readlines()
+        lines = infile.readlines()
 
     all_tokens = []
 
@@ -76,11 +79,14 @@ def main():
                 output_tokens.append(args.unk_string)
 
         output_string = " ".join(output_tokens)
-        sys.stdout.write(output_string + "\n")
+        outfile.write(output_string + "\n")
 
     toc = time.time() - tic
 
     logging.debug("Time taken: %f seconds" % toc)
+
+    infile.close()
+    outfile.close()
 
 if __name__ == '__main__':
     main()

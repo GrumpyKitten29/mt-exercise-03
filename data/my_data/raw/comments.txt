@@ -1,0 +1,6 @@
+The bash files did not execute on my machine.
+I tried for around two hours just to get the venv setup to work and eventually abandoned it.
+My terminal seems to have problems in general, so I modified the python files to be able to run without terminal commands.
+
+My input data consists of a collection of short stories, taken from the following website:
+https://universe.leagueoflegends.com/en_GB

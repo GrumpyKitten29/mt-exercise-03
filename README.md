@@ -41,4 +41,22 @@ Generate (sample) some text from a trained model with:
 
     ./scripts/generate.sh
 
+Changes made:
 
+Changed preprocess_raw.py to be executable in IDE
+
+Changed default values in preprocess.py to be executable in IDE
+
+Added my_data and corresponding textfiles to repo
+
+Added split.py to repo. Splits data into train, test and valid
+
+Added train, test and valid to repo
+
+Changed train.sh to wait for user input before exiting, to be able to read error messages
+
+Changed generate.sh to wait for user input before exiting, to be able to read error messages
+
+Changed generate.sh to write to a .txt file instead of undefined
+
+Added model.pt and sample.txt to repo

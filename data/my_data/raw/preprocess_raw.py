@@ -1,6 +1,6 @@
 import sys
 
-with open('tales.txt', 'r') as infile, open ('tales_cleaned.txt', 'w') as outfile:
+with open('tales.txt', 'r', encoding='utf8') as infile, open ('tales_cleaned.txt', 'w', encoding='utf8') as outfile:
     for line in infile.readlines():
         if line.strip() == "":
             continue

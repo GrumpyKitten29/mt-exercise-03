@@ -30,8 +30,8 @@ def parse_args():
 
 def main():
 
-    infile = open('tales_cleaned.txt', 'r')
-    outfile = open('tales_preprocessed.txt', 'w')
+    infile = open('tales_cleaned.txt', 'r', encoding='utf8')
+    outfile = open('tales_preprocessed.txt', 'w', encoding='utf8')
 
     tic = time.time()
 

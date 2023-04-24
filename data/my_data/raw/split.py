@@ -1,9 +1,9 @@
 
 
-with open('tales_preprocessed.txt', 'r') as infile,\
-    open('../test.txt', 'w') as outfile1,\
-    open('../valid.txt', 'w') as outfile2,\
-    open('../train.txt', 'w') as outfile3:
+with open('tales_preprocessed.txt', 'r', encoding='utf8') as infile,\
+    open('../test.txt', 'w', encoding='utf8') as outfile1,\
+    open('../valid.txt', 'w', encoding='utf8') as outfile2,\
+    open('../train.txt', 'w', encoding='utf8') as outfile3:
 
     text = infile.readlines()
 

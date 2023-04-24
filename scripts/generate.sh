@@ -18,7 +18,7 @@ device=""
         --data $data/my_data \
         --words 100 \
         --checkpoint $models/model.pt \
-        --outf $samples/sample
+        --outf $samples/sample.txt
 )
 
 read -p "Press any key to exit"

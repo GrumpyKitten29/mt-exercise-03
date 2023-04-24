@@ -22,7 +22,7 @@ echo "Model 1:"
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
         --epochs 40 \
         --log-interval 100 \
-        --emsize 250 --nhid 250 --dropout 0.1 --tied \
+        --emsize 250 --nhid 250 --dropout 0 --tied \
         --save $models/model1.pt
 )
 
@@ -32,7 +32,7 @@ echo "Model 2:"
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
         --epochs 40 \
         --log-interval 100 \
-        --emsize 250 --nhid 250 --dropout 0.3 --tied \
+        --emsize 250 --nhid 250 --dropout 0.2 --tied \
         --save $models/model2.pt
 )
 
@@ -42,7 +42,7 @@ echo "Model 3:"
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
         --epochs 40 \
         --log-interval 100 \
-        --emsize 250 --nhid 250 --dropout 0.5 --tied \
+        --emsize 250 --nhid 250 --dropout 0.4 --tied \
         --save $models/model3.pt
 )
 
@@ -52,7 +52,7 @@ echo "Model 4:"
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
         --epochs 40 \
         --log-interval 100 \
-        --emsize 250 --nhid 250 --dropout 0.7 --tied \
+        --emsize 250 --nhid 250 --dropout 0.6 --tied \
         --save $models/model4.pt
 )
 
@@ -62,7 +62,7 @@ echo "Model 5:"
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/my_data \
         --epochs 40 \
         --log-interval 100 \
-        --emsize 250 --nhid 250 --dropout 0.9 --tied \
+        --emsize 250 --nhid 250 --dropout 0.8 --tied \
         --save $models/model5.pt
 )
 
